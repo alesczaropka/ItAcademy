@@ -1,0 +1,34 @@
+[
+  {
+    "type": "motorcycle",
+    "model": "Ninja ZX-14"
+  },
+  {
+    "type": "automobile",
+    "model": "Audi Q7"
+  },
+  {
+    "type": "automobile",
+    "model": "Audi Q9!№"
+  },
+  {
+    "type": "minibus",
+    "model": "Sprinter264"
+  },
+  {
+    "type": "minibus",
+    "model": "Transporter T5"
+  },
+  {
+    "type": "automobile",
+    "model": "BMW M5"
+  },
+  {
+    "type": "automobile",
+    "model": "Mazda CX7"
+  },
+  {
+    "type": "motorcycle",
+    "model": "Ninja **"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "type": "motorcycle",
+    "model": "Ninja ZX-14"
+  },
+  {
+    "type": "automobile",
+    "model": "Audi Q7"
+  },
+  {
+    "type": "minibus",
+    "model": "Sprinter264"
+  },
+  {
+    "type": "motorcycle",
+    "model": "Ninja **"
+  }
+]

@@ -1,0 +1,4 @@
+motorcycle, Ninja ZX-14
+automobile, Audi Q7
+minibus, Sprinter264
+motorcycle, Ninja **
