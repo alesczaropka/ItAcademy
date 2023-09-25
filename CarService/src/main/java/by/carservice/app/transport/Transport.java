@@ -1,12 +1,16 @@
 package by.carservice.app.transport;
 
+import by.carservice.app.transport.validation.annotation.Parameter;
+
 import java.util.Objects;
 
 public class Transport {
-
     private final TransportType transportType;
+
+    @Parameter(pattern = "^[A-Za-z]+(.[A-Za-z0-9-_]*)+[A-Za-z0-9]$")
     private final String model;
     private final int price;
+
 
     public Transport(final TransportType transportType, final String model) {
         this.transportType = transportType;

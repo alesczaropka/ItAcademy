@@ -4,7 +4,7 @@ import by.carservice.app.file.parser.TransportParserException;
 import by.carservice.app.transport.Transport;
 import by.carservice.app.transport.TransportChecked;
 import by.carservice.app.transport.TransportType;
-import by.carservice.app.transport.rules.Rules;
+import by.carservice.app.transport.rules.ModelValidator;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class TXTParser extends FileParser {
         final TransportType transportType = TransportType.valueOf(parts[0].toUpperCase());
         final String model = parts[1];
 
-        final boolean isModelValid = Rules.MODEL_VALIDATOR.test(model);
+        final boolean isModelValid = ModelValidator.MODEL_VALIDATOR.test(model);
 
         final Transport transport = isModelValid ? new Transport(transportType, model) : null;
 

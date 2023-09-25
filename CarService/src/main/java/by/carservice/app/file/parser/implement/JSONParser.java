@@ -4,7 +4,7 @@ import by.carservice.app.file.parser.TransportParserException;
 import by.carservice.app.transport.Transport;
 import by.carservice.app.transport.TransportChecked;
 import by.carservice.app.transport.TransportType;
-import by.carservice.app.transport.rules.Rules;
+import by.carservice.app.transport.rules.ModelValidator;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,14 +47,13 @@ public class JSONParser extends FileParser {
         final TransportType transportType = TransportType.valueOf(jsonValues.getString("type").toUpperCase());
         final String model = jsonValues.getString("model");
 
-        final boolean isModelValid = Rules.MODEL_VALIDATOR.test(model);
+        final boolean isModelValid = ModelValidator.MODEL_VALIDATOR.test(model);
 
         final Transport transport = isModelValid ? new Transport(transportType, model) : null;
 
         return new TransportChecked(
                 transport,
-                jsonValues.getString("type") + ", " +
-                        jsonValues.getString("model"),
+                jsonValues.getString("type") + ", " + jsonValues.getString("model"),
                 isModelValid
         );
     }
