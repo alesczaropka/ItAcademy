@@ -1,14 +1,18 @@
 package by.carservice.app.transport;
 
-import by.carservice.app.transport.validation.annotation.Parameter;
+import by.carservice.app.transport.validat.annotation.Parameter;
 
 import java.util.Objects;
 
+
 public class Transport {
+    @Parameter(pattern = "^[A-Za-z]{7,10}$")
     private final TransportType transportType;
 
     @Parameter(pattern = "^[A-Za-z]+(.[A-Za-z0-9-_]*)+[A-Za-z0-9]$")
     private final String model;
+
+    @Parameter(pattern = "^[0-9]{1,4}$")
     private final int price;
 
 
