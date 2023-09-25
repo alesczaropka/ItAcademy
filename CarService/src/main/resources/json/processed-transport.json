@@ -1,1 +1,32 @@
-[{"model":"Ninja ZX-14","type":"MOTORCYCLE"},{"model":"Audi Q7","type":"AUTOMOBILE"},{"model":"Sprinter264","type":"MINIBUS"},{"model":"Transporter T5","type":"MINIBUS"},{"model":"BMW M5","type":"AUTOMOBILE"},{"model":"Mazda CX7","type":"AUTOMOBILE"}]
+[
+      {
+            "price": "10",
+            "model": "Ninja ZX-14",
+            "type": "MOTORCYCLE"
+      },
+      {
+            "price": "20",
+            "model": "Audi Q7",
+            "type": "AUTOMOBILE"
+      },
+      {
+            "price": "30",
+            "model": "Sprinter264",
+            "type": "MINIBUS"
+      },
+      {
+            "price": "30",
+            "model": "Transporter T5",
+            "type": "MINIBUS"
+      },
+      {
+            "price": "20",
+            "model": "BMW M5",
+            "type": "AUTOMOBILE"
+      },
+      {
+            "price": "20",
+            "model": "Mazda CX7",
+            "type": "AUTOMOBILE"
+      }
+]

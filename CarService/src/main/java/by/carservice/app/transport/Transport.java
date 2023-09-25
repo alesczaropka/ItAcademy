@@ -28,7 +28,7 @@ public class Transport {
 
     @Override
     public String toString() {
-        return String.join("|",
+        return String.join(", ",
                 transportType.name(),
                 model,
                 String.valueOf(price)

@@ -1,4 +1,4 @@
-package by.carservice.app.writer;
+package by.carservice.app.file.writer;
 
 public class TransportWriterException extends Exception {
 

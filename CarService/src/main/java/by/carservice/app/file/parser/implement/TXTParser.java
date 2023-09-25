@@ -1,6 +1,6 @@
-package by.carservice.app.parser.implement;
+package by.carservice.app.file.parser.implement;
 
-import by.carservice.app.parser.TransportParserException;
+import by.carservice.app.file.parser.TransportParserException;
 import by.carservice.app.transport.Transport;
 import by.carservice.app.transport.TransportChecked;
 import by.carservice.app.transport.TransportType;

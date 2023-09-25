@@ -1,4 +1,4 @@
-package by.carservice.app.reader;
+package by.carservice.app.file.reader;
 
 import by.carservice.app.transport.TransportChecked;
 

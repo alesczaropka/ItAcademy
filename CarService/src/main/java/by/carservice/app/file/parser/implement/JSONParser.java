@@ -1,6 +1,6 @@
-package by.carservice.app.parser.implement;
+package by.carservice.app.file.parser.implement;
 
-import by.carservice.app.parser.TransportParserException;
+import by.carservice.app.file.parser.TransportParserException;
 import by.carservice.app.transport.Transport;
 import by.carservice.app.transport.TransportChecked;
 import by.carservice.app.transport.TransportType;
@@ -21,13 +21,13 @@ public class JSONParser extends FileParser {
                     .lines()
                     .reduce(String::concat)
                     .orElse(null);
-            final JSONArray jsonArray = new JSONArray(String.valueOf(content));
+            final JSONArray jsonTransportArray = new JSONArray(String.valueOf(content));
 
             final List<TransportChecked> transportCheckedList = new ArrayList<>();
-            int index = 0;
-            for (Object o : jsonArray) {
-                transportCheckedList.add(index++, mapToPair((JSONObject) o));
-            }
+
+            jsonTransportArray.forEach(jsonTransportItem ->
+                    transportCheckedList.add(mapToPair(jsonTransportItem)));
+
             return transportCheckedList;
         } catch (final JSONException ex) {
             if (jsonContent.equals("")) {
@@ -42,9 +42,10 @@ public class JSONParser extends FileParser {
         }
     }
 
-    private static TransportChecked mapToPair(final JSONObject values) {
-        final TransportType transportType = TransportType.valueOf(values.getString("type").toUpperCase());
-        final String model = values.getString("model");
+    private static TransportChecked mapToPair(final Object objectValues) {
+        final JSONObject jsonValues = (JSONObject) objectValues;
+        final TransportType transportType = TransportType.valueOf(jsonValues.getString("type").toUpperCase());
+        final String model = jsonValues.getString("model");
 
         final boolean isModelValid = Rules.MODEL_VALIDATOR.test(model);
 
@@ -52,8 +53,8 @@ public class JSONParser extends FileParser {
 
         return new TransportChecked(
                 transport,
-                values.getString("type") + ", " +
-                        values.getString("model"),
+                jsonValues.getString("type") + ", " +
+                        jsonValues.getString("model"),
                 isModelValid
         );
     }

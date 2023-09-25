@@ -1,6 +1,6 @@
-package by.carservice.app.parser;
+package by.carservice.app.file.parser;
 
-import by.carservice.app.reader.TransportReaderException;
+import by.carservice.app.file.reader.TransportReaderException;
 import by.carservice.app.transport.TransportChecked;
 
 import java.util.List;

@@ -1,6 +1,7 @@
-package by.carservice.app.parser.implement;
+package by.carservice.app.file.parser.implement;
 
-import by.carservice.app.parser.TransportParserException;
+import by.carservice.app.file.parser.TransportParserException;
+import by.carservice.app.file.parser.implement.TXTParser;
 import by.carservice.app.transport.TransportChecked;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,17 +12,17 @@ import java.util.List;
 import static by.carservice.app.Constants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class JSONParserTest {
-    private JSONParser parser;
+class TXTParserTest {
+    private TXTParser parser;
 
     @BeforeEach
     public void init() {
-        parser = new JSONParser();
+        parser = new TXTParser();
     }
 
     @Test
     public void parse_content_from_file() throws TransportParserException {
-        final List<TransportChecked> transportList = parser.parse(TEST_JSON_FILE_CONTENT);
+        final List<TransportChecked> transportList = parser.parse(TEST_TXT_FILE_CONTENT);
 
         assertEquals(TEST_EXPECTED_TRANSPORT_LIST, transportList);
     }
@@ -35,17 +36,17 @@ class JSONParserTest {
     }
 
     @Test
-    public void parse_wrong_json_content_from_file() {
+    public void parse_wrong_txt_content_from_file() {
         final TransportParserException exception =
-                Assertions.assertThrowsExactly(TransportParserException.class, () -> parser.parse(TEST_JSON_WRONG_STRUCTURE_CONTENT));
+                Assertions.assertThrowsExactly(TransportParserException.class, () -> parser.parse(TEST_TXT_WRONG_STRUCTURE_CONTENT));
 
-        assertEquals("Структура данных не соответсвует массиву JSON", exception.getMessage());
+        assertEquals("Ошибка анализа прочтенного файла", exception.getMessage());
     }
 
     @Test
     public void parse_wrong_content_from_file() {
         final TransportParserException exception =
-                Assertions.assertThrowsExactly(TransportParserException.class, () -> parser.parse(TEST_JSON_WRONG_MODEL_CONTENT));
+                Assertions.assertThrowsExactly(TransportParserException.class, () -> parser.parse(TEST_WRONG_MODEL_CONTENT));
 
         assertEquals("Ошибка определения типа транспорта", exception.getMessage());
     }

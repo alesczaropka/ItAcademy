@@ -1,4 +1,4 @@
-package by.carservice.app.writer;
+package by.carservice.app.file.writer;
 
 import by.carservice.app.transport.Transport;
 import by.carservice.app.transport.TransportChecked;

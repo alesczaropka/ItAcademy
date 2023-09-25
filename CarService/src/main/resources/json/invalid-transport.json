@@ -1,2 +1,10 @@
-automobile, Audi Q9!№
-motorcycle, Ninja **
+[
+  {
+    "model": "Audi Q9!№",
+    "type": "automobile"
+  },
+  {
+    "model": "Ninja **",
+    "type": "motorcycle"
+  }
+]

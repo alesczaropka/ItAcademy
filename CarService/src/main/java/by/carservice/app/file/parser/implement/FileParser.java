@@ -1,8 +1,8 @@
-package by.carservice.app.parser.implement;
+package by.carservice.app.file.parser.implement;
 
-import by.carservice.app.parser.ContentParser;
-import by.carservice.app.parser.TransportParserException;
-import by.carservice.app.reader.TransportReaderException;
+import by.carservice.app.file.parser.ContentParser;
+import by.carservice.app.file.parser.TransportParserException;
+import by.carservice.app.file.reader.TransportReaderException;
 import by.carservice.app.transport.TransportChecked;
 
 import java.util.List;
