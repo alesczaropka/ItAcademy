@@ -8,7 +8,7 @@ public class CarService {
             System.out.println("Запуск программы Автодиагностика.");
             Menu.run();
             System.out.println("Закрытие программы Автодиагностика.");
-        } catch (Exception e) {
+        } catch (final Exception e) {
             System.err.println("Ошибка выполнения программы.");
             e.printStackTrace();
         }
